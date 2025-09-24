@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_instituicao,access_instituicao,model_ies_instituicao,,1,1,1,1
+access_faculdade,access_faculdade,model_ies_faculdade,,1,1,1,1
+access_curso,access_curso,model_ies_curso,,1,1,1,1
+access_candidatura,access_candidatura,model_ies_candidatura,,1,1,1,1

@@ -1,0 +1,17 @@
+<odoo>
+
+    <!-- Ação para listar apenas pedidos em rascunho -->
+    <record id="action_sale_order_pending" model="ir.actions.act_window">
+        <field name="name">Pedidos Pendentes</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('state','=','draft')]</field>
+    </record>
+
+    <!-- Submenu Pedidos Pendentes -->
+    <menuitem id="menu_sale_order_pending"
+              name="Pedidos Pendentes"
+              parent="sale.menu_sale_order"
+              action="action_sale_order_pending"/>
+
+</odoo>

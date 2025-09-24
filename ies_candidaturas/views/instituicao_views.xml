@@ -1,0 +1,39 @@
+<odoo>
+    <menuitem id="menu_ies_root" name="IES" sequence="10"/>
+
+    <record id="view_instituicao_tree" model="ir.ui.view">
+        <field name="name">ies.instituicao.tree</field>
+        <field name="model">ies.instituicao</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="sigla"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_instituicao_form" model="ir.ui.view">
+        <field name="name">ies.instituicao.form</field>
+        <field name="model">ies.instituicao</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="sigla"/>
+                        <field name="faculdade_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_instituicao" model="ir.actions.act_window">
+        <field name="name">Instituições</field>
+        <field name="res_model">ies.instituicao</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_instituicao" name="Instituições"
+              parent="menu_ies_root" action="action_instituicao"/>
+</odoo>

@@ -1,0 +1,15 @@
+<odoo>
+    <record id="view_partner_form_bweguda" model="ir.ui.view">
+        <field name="name">res.partner.form.bweguda</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+
+            <!-- Adiciona o campo no topo do formulário -->
+            <xpath expr="//sheet/group/group" position="inside">
+                <field name="customer_code"/>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

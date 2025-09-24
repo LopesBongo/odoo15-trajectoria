@@ -1,0 +1,23 @@
+<odoo>
+    <data>
+        <!-- MENU PRINCIPAL -->
+        <menuitem id="main_solution_menu"
+                  name="Implementação"
+                  sequence="0"
+                  web_icon="lopes,static/description/icon.png"/>
+
+        <!-- SUBMENU CLIENTES -->
+        <menuitem id="menu_client_training"
+                  name="Clientes"
+                  parent="main_solution_menu"
+                  action="action_client_training"
+                  sequence="1"/>
+
+        <!-- SUBMENU SOLUÇÕES -->
+        <menuitem id="menu_solution_training"
+                  name="Soluções"
+                  parent="main_solution_menu"
+                  action="action_solution_training"
+                  sequence="2"/>
+    </data>
+</odoo>

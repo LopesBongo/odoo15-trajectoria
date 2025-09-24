@@ -1,0 +1,32 @@
+<odoo>
+    <data>
+
+        <!-- MENU RAIZ -->
+        <menuitem id="action_main_school_menut"
+                  name="Escola"
+                  sequence="0"
+                  web_icon="lopes,static/description/icon.png"/>
+
+        <!-- Submenu Alunos -->
+        <menuitem id="menu_action_school_student"
+                  name="Alunos"
+                  parent="action_main_school_menut"
+                  action="action_school_student"
+                  sequence="1"/>
+
+        <!-- Submenu Turmas -->
+        <menuitem id="menu_action_school_class"
+                  name="Turmas"
+                  parent="action_main_school_menut"
+                  action="action_school_class"
+                  sequence="2"/>
+
+        <!-- Submenu Professores -->
+        <menuitem id="menu_action_school_teacher"
+                  name="Professores"
+                  parent="action_main_school_menut"
+                  action="action_school_teacher"
+                  sequence="3"/>
+
+    </data>
+</odoo>

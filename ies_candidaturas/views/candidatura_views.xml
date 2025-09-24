@@ -1,0 +1,38 @@
+<odoo>
+    <record id="view_candidatura_tree" model="ir.ui.view">
+        <field name="name">ies.candidatura.tree</field>
+        <field name="model">ies.candidatura</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="candidato_id"/>
+                <field name="curso_id"/>
+                <field name="estado"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_candidatura_form" model="ir.ui.view">
+        <field name="name">ies.candidatura.form</field>
+        <field name="model">ies.candidatura</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="candidato_id"/>
+                        <field name="curso_id"/>
+                        <field name="estado"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_candidatura" model="ir.actions.act_window">
+        <field name="name">Candidaturas</field>
+        <field name="res_model">ies.candidatura</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_candidatura" name="Candidaturas"
+              parent="menu_ies_root" action="action_candidatura"/>
+</odoo>

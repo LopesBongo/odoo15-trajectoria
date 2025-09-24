@@ -1,0 +1,55 @@
+<odoo>
+    <data>
+        <!-- Form view -->
+        <record id="view_school_teacher_form" model="ir.ui.view">
+            <field name="name">school.teacher.form</field>
+            <field name="model">school.teacher</field>
+            <field name="arch" type="xml">
+                <form string="Professor">
+                    <!-- é o container padrão do formulário -->
+                    <sheet>
+                        <!-- Organiza os campos horizontal ou verticalmente -->
+                        <group>
+                            <!-- exibem os campos do -->
+                            <field name="name"/>
+                            <field name="subject"/>
+                        </group>
+                        <!-- cria abas dentro do formulário. -->
+                        <notebook>
+                            <page string="Turmas">
+                                <!-- Exibe os registros relacionados pelo One2many(turmas do professor). -->
+                                <field name="class_ids">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="teacher_id"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree view -->
+        <record id="view_school_teacher_tree" model="ir.ui.view">
+            <field name="name">school.teacher.tree</field>
+            <field name="model">school.teacher</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="subject"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_school_teacher" model="ir.actions.act_window">
+            <field name="name">Professores</field>
+            <field name="res_model">school.teacher</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>
+
+

@@ -1,0 +1,90 @@
+<odoo>
+    <data>
+        <!--Modelo, Vista de Formulario (Detalhes da consulta )-->
+        <record id="view_medical_appointment_form" model="ir.ui.view">
+            <field name="name">medical.appointment.form</field>
+            <field name="model">medical.appointment</field>
+            <field name="arch" type="xml">
+                <form string="Consulta Médica">
+                    <sheet>
+                        <group>
+                            <field name="patient_id"/>
+                            <field name="doctor_id"/>
+                            <field name="appointment_date"/>
+                            <field name="description"/>
+                            <field name="state"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+         <!-- Modelo, de Vista tree (lista de consultas) -->
+        <record id="view_medical_appointment_tree" model="ir.ui.view">
+            <field name="name">medical.appointment.tree</field>
+            <field name="model">medical.appointment</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="patient_id"/>
+                    <field name="doctor_id"/>
+                    <field name="appointment_date"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!--Modelo, de Vista Kanban-->
+        <record id="medical_appointment_view_kanban" model="ir.ui.view">
+            <field name="name">medical.appointment.kanban</field>
+            <field name="model">medical.appointment</field>
+            <field name="arch" type="xml">
+                <kanban string="medical appointment">
+                    <field name="patient_id"/>
+                    <field name="doctor_id"/>
+                    <field name="appointment_date"/>
+                    <field name="description"/>
+                    <field name="state"/>
+                    <!-- Template de cada card -->
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click o_kanban_card">
+                                <div class="o_kanban_details">
+                                    <strong>Paciente:
+                                        <field name="patient_id"/>
+                                    </strong>
+                                    <br/>
+                                    <div>Médico:
+                                        <field name="doctor_id"/>
+                                    </div>
+                                    <br/>
+                                    <div>Data da Consulta:
+                                        <field name="appointment_date"/>
+                                    </div>
+                                    <br/>
+                                    <div>Detalhes da Consulta:
+                                        <field name="description"/>
+                                    </div>
+                                    <br/>
+                                    <div>Estado:
+                                        <field name="state"/>
+                                    </div>
+                                    <br/>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+
+        <!--Modelo,Registo de uma Acção-->
+        <record id="action_medical_appointment" model="ir.actions.act_window">
+            <field name="name">Consultas</field>
+            <field name="res_model">medical.appointment</field>
+            <field name="view_mode">tree,kanban,form</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,12 @@
+<odoo>
+    <template id="report_saleorder_document_bweguda" inherit_id="sale.report_saleorder_document">
+        <!-- Inserir abaixo do nome do cliente no relatório -->
+        <xpath expr="//div[@class='row mt32 mb32']/div[1]" position="inside">
+            <p>
+                <strong>Código Interno do Cliente:</strong>
+                <span t-field="o.partner_id.customer_code"/>
+            </p>
+        </xpath>
+    </template>
+</odoo>
+

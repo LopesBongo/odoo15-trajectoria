@@ -1,0 +1,129 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<odoo>
+    <data>
+        <!--Modelo, Vista de Formulario -->
+        <record id = "olualinet_training_view_form" model = "ir.ui.view" >
+            <field name = "name" >olualinet.training.form</field>
+            <field name = "model" >olualinet.training</field>
+            <field name = "arch" type = "xml" >
+            <form string = "Treinamento Olualinet" >
+                <sheet>
+                    <group>
+                        <group>
+                       <field name = "name"/>
+                       <field name = "category"/>
+                       <field name="passport_number"/>
+                      <field name="balance_number"/>
+                       </group>
+                        <group>
+                            <field name="ative"/>
+                            <field name="gender"/>
+                            <field name="today_date"/>
+                        </group>
+
+                    </group>
+
+                </sheet>
+            </form>
+            </field>
+        </record>
+
+        <!--Modelo, de Vista tree-->
+        <record id="olualinet_training_view_tree" model="ir.ui.view">
+            <field name="name">olualinet.training.tree</field>
+            <field name="model">olualinet.training</field>
+            <field name="arch" type="xml">
+                <tree string="training olualinet">
+                    <field name="name"/>
+                     <field name="category"/>
+                     <field name="passport_number"/>
+                    <field name="balance_number"/>
+                    <field name="ative"/>
+                    <field name="gender"/>
+                    <field name="today_date"/>
+
+                </tree>
+            </field>
+        </record>
+
+           <!--Modelo, de Vista search-->
+        <record id="olualinet_training_view_search" model="ir.ui.view">
+            <field name="name">olualinet.training.search</field>
+            <field name="model">olualinet.training</field>
+            <field name="arch" type="xml">
+                <search string="Pesquisa">
+                    <field name="category" string="Categoria"/>
+                    <field name="gender" string="Genero"/>
+
+                    <!--Modelo, de Vista search-->
+                    <filter string="Ativo"  name="filter_active" domain="[('ative','=',True)]"/>
+                    <filter string="Masculino"  name="filter_gender" domain="[('gender','=','male')]"/>
+
+                     <!-- Agrupamento-->
+                    <group expand="1" string="Agrupar por">
+                        <filter string="Categoria" name="grupo" context="{'group_by':'category'}"/>
+                        <filter string="Genero"  name="group_male" context="{'group_by':'gender'}"/>
+
+
+                    </group>
+
+                </search>
+            </field>
+        </record>
+
+       <!--
+    <record id="olualinet_training_view_kanban" model="ir.ui.view">
+        <field name="name">olualinet.training.kanban</field>
+        <field name="model">olualinet.training</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_small_column" create="true">
+                <field name="name"/>
+                <field name="category"/>
+                <field name="passport_number"/>
+                <field name="balance"/>
+                <field name="ocupation"/>
+                <field name="gender"/>
+                <field name="ative"/>
+                <field name="academic_level"/>
+                <field name="today_date"/>
+
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click o_kanban_card">
+                            <div class="o_kanban_details">
+                                <strong><field name="name"/></strong>
+                                <div><field name="category"/></div>
+                                <div><field name="passport_number"/></div>
+                                <div><field name="balance"/></div>
+                                <div><field name="ocupation"/></div>
+                                <div><field name="gender"/></div>
+                                <div><field name="ative"/></div>
+                                <div><field name="academic_level"/></div>
+                                <div><field name="today_date"/></div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+-->
+
+
+
+
+        <!--Modelo,Registo de uma Acção-->
+         <record id="action_olualinet_training" model="ir.actions.act_window">
+             <field name="name">Olualinet Treinamento</field>
+             <field name="res_model">olualinet.training</field>
+             <field name="view_mode">tree,form</field>
+             <field name="context">{}</field>
+             <field name="domain">[]</field>
+         </record>
+
+
+         <!-- Menu -->
+        <menuitem id="main_olualinet_menu" name="Olualinet" sequence="0" web_icon="lopes,static/description/icon.png"/>
+        <menuitem id="menu_Olualinet_training_menu" name="Treinamento" parent="main_olualinet_menu" action="action_olualinet_training" sequence="1"/>
+    </data>
+</odoo>

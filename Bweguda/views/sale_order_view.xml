@@ -1,0 +1,19 @@
+<odoo>
+    <record id="view_order_form_bweguda" model="ir.ui.view">
+        <field name="name">sale.order.form.bweguda</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+
+            <!-- Cria a aba Aprovação -->
+            <xpath expr="//sheet/notebook" position="inside">
+                <page string="Aprovação">
+                    <group>
+                        <field name="approval_date"/>
+                    </group>
+                </page>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

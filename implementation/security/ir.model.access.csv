@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_implement_client,access.implement.client,model_implement_client,,1,1,1,1
+access_implement_solution,access.implement.solution,model_implement_solution,,1,1,1,1

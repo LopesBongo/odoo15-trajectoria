@@ -1,0 +1,37 @@
+<odoo>
+    <record id="view_curso_tree" model="ir.ui.view">
+        <field name="name">ies.curso.tree</field>
+        <field name="model">ies.curso</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="faculdade_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_curso_form" model="ir.ui.view">
+        <field name="name">ies.curso.form</field>
+        <field name="model">ies.curso</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="faculdade_id"/>
+                        <field name="candidatura_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_curso" model="ir.actions.act_window">
+        <field name="name">Cursos</field>
+        <field name="res_model">ies.curso</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_curso" name="Cursos"
+              parent="menu_ies_root" action="action_curso"/>
+</odoo>

@@ -1,0 +1,30 @@
+<odoo>
+    <data>
+        <!-- MENU PRINCIPAL -->
+        <menuitem id="action_main_medical_appointments_menu"
+                  name="Medical Appointment"
+                  sequence="0"
+                  web_icon="lopes,static/description/icon.png"/>
+
+        <!-- SUBMENU doctor hospital -->
+        <menuitem id="menu_action_hospital_doctor"
+                  name="Doctor"
+                  parent="action_main_medical_appointments_menu"
+                  action="action_hospital_doctor"
+                  sequence="2"/>
+
+        <!-- SUBMENU medical_patient-->
+        <menuitem id="menu_action_medical_patient"
+                  name="Paciente"
+                  parent="action_main_medical_appointments_menu"
+                  action="action_medical_patient"
+                  sequence="1"/>
+
+        <!-- SUBMENU medical_appointment-->
+        <menuitem id="menu_medical_appointment_root"
+                  name="Consulta"
+                  parent="action_main_medical_appointments_menu"
+                  action="action_medical_appointment"
+                  sequence="3"/>
+    </data>
+</odoo>
