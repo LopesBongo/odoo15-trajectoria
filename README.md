@@ -1,7 +1,13 @@
 # 👋 Olá, eu sou o Lopes Cavila  
 
+[![Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)]()  
+[![Python](https://img.shields.io/badge/Python-3.9%2B-blue?logo=python)]()  
+[![Odoo](https://img.shields.io/badge/Odoo-15.0-purple?logo=odoo)]()  
+[![GitHub followers](https://img.shields.io/github/followers/LopesBongo?style=social)]()  
+[![GitHub stars](https://img.shields.io/github/stars/LopesBongo?style=social)]()  
+
 🚀 Entusiasta de **Odoo ERP** e **Python Developer** em construção.  
-Este perfil documenta minha **trajetória prática de aprendizado e desenvolvimento**, criando soluções reais em Odoo 15 e aplicando boas práticas de programação.  
+Este perfil documenta minha trajetória prática de aprendizado e desenvolvimento, criando soluções reais em Odoo 15 e aplicando boas práticas de programação.  
 
 ---
 
@@ -26,33 +32,32 @@ Este perfil documenta minha **trajetória prática de aprendizado e desenvolvime
 
 ### 🔹 T’Mola Workshop  
 📌 Solução para oficina automóvel:  
-- **Ordens de venda** com campos extra (Modelo, Matrícula, Cor, KM, Nº do Chassi).  
-- **Clientes** com numeração automática.  
-- **Produtos** com novos campos (Volume, CODSUP, Formato).  
-- **Gestão de entradas e saídas de veículos**.  
+- Ordens de venda com campos extra (**Modelo, Matrícula, Cor, KM, Nº do Chassi**).  
+- Clientes com **numeração automática**.  
+- Produtos com novos campos (**Volume, CODSUP, Formato**).  
+- Gestão de **entradas e saídas de veículos**.  
 
 ---
 
 ### 🔹 Bweguda Sale (Customização de Vendas)  
-📌 Customização avançada para o módulo `sale`:  
+📌 Customização avançada para o módulo **sale**:  
 - **Código interno do cliente** (sequência automática).  
 - **Data de aprovação** em ordens de venda + aba “Aprovação”.  
 - Submenu **Pedidos Pendentes** (exibe apenas em rascunho).  
-- Automação que preenche data de aprovação ao confirmar venda.  
-- Relatório QWeb de vendas customizado com código interno do cliente.  
+- Automação: ao confirmar venda, preenche a data de aprovação.  
+- Relatório **QWeb** de vendas customizado com código interno do cliente.  
 
 ---
 
 ## 📊 Tecnologias que utilizo  
-[![Python](https://img.shields.io/badge/Python-3.9%2B-blue?logo=python)]()  
-[![Odoo](https://img.shields.io/badge/Odoo-15.0-purple?logo=odoo)]()  
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-DB-blue?logo=postgresql)]()  
-[![Git](https://img.shields.io/badge/Git-Ferramenta-orange?logo=git)]()  
+- **Python** 🐍  
+- **Odoo ERP (v15)** ⚙️  
+- **PostgreSQL** 🗄️  
+- **Git & GitHub** 🌍  
+- **QWeb Reports** 📝  
 
 ---
 
-## 🌍 Conecte-se comigo  
-🔗 [LinkedIn](https://www.linkedin.com/in/lopes-bongo-cavila-a949aa183)  
-🔗 [GitHub](https://github.com/LopesBongo)  
-
+📫 Conecte-se comigo:  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Lopes%20Cavila-blue?logo=linkedin)](https://www.linkedin.com/in/lopes-bongo-cavila-a949aa183)  
 
