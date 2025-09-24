@@ -1,27 +1,50 @@
-# Odoo 15 Trajectoria 🚀
+# 🚀 Odoo 15 – Minha Trajetória de Aprendizado  
 
-Repositório mostrando minha trajetória de aprendizado em **Odoo 15** e **Python**.
+[![Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)]()  
+[![Python](https://img.shields.io/badge/Python-3.9%2B-blue?logo=python)]()  
+[![Odoo](https://img.shields.io/badge/Odoo-15.0-purple?logo=odoo)]()  
+[![GitHub stars](https://img.shields.io/github/stars/LopesBongo/odoo15-trajectoria?style=social)]()  
+[![GitHub forks](https://img.shields.io/github/forks/LopesBongo/odoo15-trajectoria?style=social)]()  
 
-## 📌 Objetivo
-Documentar meus estudos e práticas com o Odoo, incluindo:
-- Criação de módulos personalizados
-- Modelos de dados
-- Relatórios QWeb
-- Integrações
+---
 
-## ⚡ Tecnologias
-- Python 3
-- Odoo 15
-- PostgreSQL
-- Git & GitHub
+## 📖 Sobre o Projeto | About the Project
+Este repositório documenta minha **trajetória de aprendizado em Odoo 15 e Python**.  
+This repository documents my **learning journey with Odoo 15 and Python**.  
 
-## 📖 Aprendizados
-Cada commit representa um passo na minha evolução como desenvolvedor Python com Odoo.  
-Aqui você encontra exemplos práticos, códigos de teste e boas práticas aprendidas ao longo da jornada.
+Inclui / It includes:  
+- Desenvolvimento de **módulos customizados** no Odoo | Custom **Odoo modules** development.  
+- Criação de **modelos, views e relatórios QWeb** | Models, views and QWeb reports.  
+- **Scripts de automação em Python** | Automation scripts in Python.  
+- Notas e resumos de estudo | Study notes and summaries.  
 
-## 🔗 Contato
-- GitHub: [LopesBongo](https://github.com/LopesBongo)
+---
+
+## 📂 Estrutura do Repositório | Repository Structure
+
+```bash
+odoo15-trajectoria/
+├── README.md
+├── .gitignore
+├── LICENSE
+├── custom_modules/       # módulos Odoo criados/testados | Odoo custom modules
+│   └── meu_modulo/
+│       ├── __manifest__.py
+│       ├── models/
+│       └── views/
+├── scripts/              # scripts auxiliares em Python | helper scripts
+└── notes/                # anotações e resumos | notes and study materials
 
 
-- LinkedIn: [https://www.linkedin.com/in/lopes-bongo-cavila-a949aa183?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app]
+## 📬 Contato | Contact
+- 💼 [LinkedIn](https://www.linkedin.com/in/lopes-bongo-cavila-a949aa183)
+- 📧 Email: lopesbango@gmail.com
+
+
+##  🛠️   Próximos Passos | Next Steps
+- [ ] Criar módulo de vendas customizado  
+- [ ] Gerar relatórios PDF automáticos  
+- [ ] Implementar testes unitários em Python  
+
+
 
