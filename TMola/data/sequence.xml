@@ -1,0 +1,16 @@
+<odoo>
+    <record id="seq_client_number" model="ir.sequence">
+        <field name="name">Partner Sequence</field>
+        <field name="code">res.partner.sequence</field>
+        <field name="prefix">C</field>
+        <field name="padding">5</field>
+    </record>
+
+    <record id="seq_client_number" model="ir.sequence">
+        <field name="name">movement Sequence</field>
+        <field name="code">vehicle.movement.sequence</field>
+        <field name="prefix">C</field>
+        <field name="padding">5</field>
+    </record>
+
+</odoo>

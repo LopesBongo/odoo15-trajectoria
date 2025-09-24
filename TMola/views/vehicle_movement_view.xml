@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+      <!-- FORMULÁRIO (FORM VIEW) tela de cadastro de Movimentação de veiculo -->
+    <record id="view_vehicle_movement_form" model="ir.ui.view">
+        <field name="name">vehicle.movement.form</field>
+        <field name="model">vehicle.movement</field>
+        <field name="arch" type="xml">
+            <form string="Movimentação de Veículos">
+
+                <header>
+                    <!-- Botão Entrada -->
+                    <button name="action_entry"
+                            type="object"
+                            string="Marcar Entrada"
+                            class="btn-secondary"
+                            attrs="{'invisible': [('status', '=', 'entry')]}"/>
+
+                    <!-- Botão Em Serviço -->
+                    <button name="action_in_service"
+                            type="object"
+                            string="Marcar Em Serviço"
+                            class="btn-primary"
+                            attrs="{'invisible': [('status', '!=', 'entry')]}"/>
+
+                    <!-- Botão Saída -->
+                    <button name="action_exit"
+                            type="object"
+                            string="Registrar Saída"
+                            class="btn-success"
+                            attrs="{'invisible': [('status', '!=', 'in_service')]}"/>
+
+
+                    <!-- Botão Confirmar por Email -->
+                    <button name="action_confirm_email"
+                            type="object"
+                            string="Confirmar por Email"
+                            class="btn-info"
+                            attrs="{'invisible': [('status', 'in', ['confirmed','cancelled'])]}"/>
+
+                    <!-- Botão Confirmar -->
+                    <button name="action_confirm"
+                            type="object"
+                            string="Confirmar"
+                            class="btn-success"
+                            attrs="{'invisible': [('status', 'in', ['confirmed','cancelled'])]}"/>
+
+                    <!-- Botão Cancelar -->
+                    <button name="action_cancel"
+                            type="object"
+                            string="Cancelar"
+                            class="btn-danger"
+                            attrs="{'invisible': [('status', '=', 'cancelled')]}"/>
+
+                    <!-- Barra de status -->
+                    <field name="status" widget="statusbar"
+                           statusbar_visible="entry,in_service,exit,confirmed,cancelled"/>
+                </header>
+
+                <sheet>
+                    <group col="2">
+                        <field name="client_id"/>
+                        <field name="name"/>
+                        <field name="vehicle_id"/>
+                    </group>
+
+                    <!-- Notebook com abas -->
+                    <notebook>
+                        <!-- Aba do veículo -->
+                        <page string="Veículo">
+                            <group col="2">
+                                <field name="vehicle_model"/>
+                                <field name="vehicle_plate"/>
+                            </group>
+                        </page>
+
+                        <!-- Aba de datas -->
+                        <page string="Datas">
+                            <group col="2">
+                                <field name="entry_date"/>
+                                <field name="exit_date"/>
+                            </group>
+                        </page>
+
+                        <!-- Aba de observações -->
+                        <page string="Observações">
+                            <group>
+                                <field name="notes"/>
+                            </group>
+                        </page>
+                    </notebook>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+        <!-- FORMULÁRIO (Tree) tela de cadastro de Movimentação de veiculo -->
+    <record id="view_vehicle_movement_tree" model="ir.ui.view">
+        <field name="name">vehicle.movement.tree</field>
+        <field name="model">vehicle.movement</field>
+        <field name="arch" type="xml">
+
+            <tree string="Movimentações de Veículos">
+                <field name="name"/>
+                <field name="vehicle_id"/>
+                <field name="vehicle_plate"/>
+                <field name="status"/>
+                <field name="entry_date"/>
+                <field name="exit_date"/>
+            </tree>
+        </field>
+    </record>
+
+
+     <!--Modelo, de Vista Kanban-->
+    <record id="view_vehicle_movement_kanban" model="ir.ui.view">
+        <field name="name">vehicle.movement.kanban</field>
+        <field name="model">vehicle.movement</field>
+        <field name="arch" type="xml">
+            <kanban string="Movimentações de Veículos">
+                <field name="name"/>
+                <field name="vehicle_id"/>
+                <field name="vehicle_model"/>
+                <field name="vehicle_plate"/>
+                <field name="status"/>
+                <field name="entry_date"/>
+                <field name="exit_date"/>
+
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click o_kanban_card">
+
+                            <!-- Cabeçalho com Nome e Ordem de Venda -->
+                            <div class="o_kanban_header d-flex justify-content-between">
+                                <span>
+                                    <strong>Nº:</strong>
+                                    <field name="name"/>
+                                </span>
+                                <span>
+                                    <strong>Ordem:</strong>
+                                    <field name="vehicle_id"/>
+                                </span>
+                            </div>
+
+                            <hr/>
+
+                            <!-- Detalhes do veículo -->
+                            <div class="o_kanban_details">
+                                <div>
+                                    <strong>Modelo:</strong>
+                                    <field name="vehicle_model"/>
+                                </div>
+                                <div>
+                                    <strong>Matrícula:</strong>
+                                    <field name="vehicle_plate"/>
+                                </div>
+                                <div>
+                                    <strong>Status:</strong>
+                                    <field name="status"/>
+                                </div>
+                                <div>
+                                    <strong>Entrada:</strong>
+                                    <field name="entry_date"/>
+                                </div>
+                                <div>
+                                    <strong>Saída:</strong>
+                                    <field name="exit_date"/>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!--Modelo,Registo de uma Acção-->
+    <record id="action_vehicle_movement" model="ir.actions.act_window">
+        <field name="name">Movimentações de Veículos</field>
+        <field name="res_model">vehicle.movement</field>
+        <field name="view_mode">tree,kanban,form</field>
+    </record>
+
+    <!-- Menu principal (Movimentações) dentro de Vendas -->
+    <menuitem id="menu_vehicle_movement_root"
+              name="Movimentações"
+              parent="sale.sale_menu_root"
+              sequence="20"/>
+
+    <!-- Submenu Veículos -->
+    <menuitem id="menu_vehicle_movement"
+              name="Veículos"
+              parent="menu_vehicle_movement_root"
+              action="action_vehicle_movement"
+              sequence="10"/>
+</odoo>

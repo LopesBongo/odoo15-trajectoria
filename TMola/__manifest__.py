@@ -1,0 +1,20 @@
+{
+    'name': 'Oficina TMola',
+    'version': '1.0',
+    'author': 'Lopes Cavila',
+    'license': 'LGPL-3',
+    'summary': 'Modelos de Venda',
+    'description': 'Costunização do Odoo',
+    'depends': ['base', 'sale', 'product', 'sale_management'],
+    'report': [
+        'report/ir.model.access.csv',
+        'report/sequence.xml',
+        'views/vehicle_movement_view.xml',
+        'views/product_orde.xml',
+        'views/res_partner.xml',
+        'views/sale_order.xml',
+        'report/vehicle_movement_report.xml',
+        'report/vehicle_movement_report_templates.xml',
+    ],
+    'application': True,
+}

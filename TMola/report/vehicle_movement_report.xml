@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Ação do relatório -->
+    <odoo>
+        <record id="action_report_vehicle_movement" model="ir.actions.report">
+            <field name="name">Movimentações de Veículos</field>
+            <field name="model">vehicle.movement</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">TMola.report_vehicle_movement_document</field>
+            <field name="print_report_name">'Movimentacoes_Veiculos'</field>
+        </record>
+    </odoo>
+
+
+    <!-- Template do relatório -->
+    <template id="report_vehicle_movement_document">
+        <t t-call="web.external_layout">
+            <div class="page">
+                <h2>Relatório de Movimentações de Veículos</h2>
+                <table class="table table-sm table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Nº Movimentação</th>
+                            <th>Veículo / Ordem</th>
+                            <th>Cliente</th>
+                            <th>Modelo</th>
+                            <th>Matrícula</th>
+                            <th>Status</th>
+                            <th>Entrada</th>
+                            <th>Saída</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="docs" t-as="o">
+                            <td>
+                                <span t-field="o.name"/>
+                            </td>
+                            <td>
+                                <span t-field="o.vehicle_id.name"/>
+                            </td>
+                            <td>
+                                <span t-field="o.client_id.name"/>
+                            </td>
+                            <td>
+                                <span t-field="o.vehicle_model"/>
+                            </td>
+                            <td>
+                                <span t-field="o.vehicle_plate"/>
+                            </td>
+                            <td>
+                                <span t-field="o.status"/>
+                            </td>
+                            <td>
+                                <span t-field="o.entry_date" t-options='{"format": "dd/MM/yyyy HH:mm"}'/>
+                            </td>
+                            <td>
+                                <span t-field="o.exit_date" t-options='{"format": "dd/MM/yyyy HH:mm"}'/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </template>
+</odoo>

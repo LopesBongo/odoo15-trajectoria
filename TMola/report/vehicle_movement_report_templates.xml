@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_vehicle_movement_document">
+        <t t-call="web.external_layout">
+            <main class="page">
+                <!-- Cabeçalho do relatório -->
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <h2 style="color: #1F4E79;">Movimentações de Veículos</h2>
+                    <span style="font-size: 10px; color: #666;">
+                        Emitido em:
+                        <t t-esc="datetime.datetime.now().strftime('%d/%m/%Y %H:%M')"/>
+                    </span>
+                </div>
+
+                <!-- Tabela estilizada -->
+                <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+                    <thead>
+                        <tr style="background-color: #1F4E79; color: #fff; text-align: left;">
+                            <th style="padding: 8px; border: 1px solid #ddd;">Nº Movimentação</th>
+                            <th style="padding: 8px; border: 1px solid #ddd;">Veículo / Ordem</th>
+                            <th style="padding: 8px; border: 1px solid #ddd;">Cliente</th>
+                            <th style="padding: 8px; border: 1px solid #ddd;">Modelo</th>
+                            <th style="padding: 8px; border: 1px solid #ddd;">Matrícula</th>
+                            <th style="padding: 8px; border: 1px solid #ddd;">Status</th>
+                            <th style="padding: 8px; border: 1px solid #ddd;">Entrada</th>
+                            <th style="padding: 8px; border: 1px solid #ddd;">Saída</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="docs" t-as="o" style="border-bottom: 1px solid #ddd;">
+                            <td style="padding: 6px; border: 1px solid #ddd;">
+                                <span t-field="o.name"/>
+                            </td>
+                            <td style="padding: 6px; border: 1px solid #ddd;">
+                                <span t-field="o.vehicle_id.name"/>
+                            </td>
+                            <td style="padding: 6px; border: 1px solid #ddd;">
+                                <span t-field="o.client_id.name"/>
+                            </td>
+                            <td style="padding: 6px; border: 1px solid #ddd;">
+                                <span t-field="o.vehicle_model"/>
+                            </td>
+                            <td style="padding: 6px; border: 1px solid #ddd;">
+                                <span t-field="o.vehicle_plate"/>
+                            </td>
+                            <td style="padding: 6px; border: 1px solid #ddd;">
+                                <span t-field="o.status"/>
+                            </td>
+                            <td style="padding: 6px; border: 1px solid #ddd;">
+                                <span t-field="o.entry_date" t-options='{"format": "dd/MM/yyyy HH:mm"}'/>
+                            </td>
+                            <td style="padding: 6px; border: 1px solid #ddd;">
+                                <span t-field="o.exit_date" t-options='{"format": "dd/MM/yyyy HH:mm"}'/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Rodapé do relatório -->
+                <div style="margin-top: 20px; text-align: center; font-size: 10px; color: #666;">
+                    TMola - Sistema de Gestão de Oficina
+                </div>
+            </main>
+        </t>
+
+
+    </template>
+</odoo>
